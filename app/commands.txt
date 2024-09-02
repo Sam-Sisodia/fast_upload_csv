@@ -1,0 +1,12 @@
+#migration like django 
+alembic init alembic
+
+alembic revision --autogenerate -m "Add pin field to users table"
+
+in alambic/env.py
+from app.models import Base
+
+target_metadata = Base.metadata
+
+alembic upgrade head
+
